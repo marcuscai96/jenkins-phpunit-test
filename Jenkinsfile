@@ -8,7 +8,7 @@ pipeline {
 		}
 		stage('Test') {
 			steps {
-                sh "phpunit --log-junit results/phpunit/phpunit.xml git url:'https://github.com/marcuscai96/jenkins-phpunit-test/blob/main/tests/phpunit.xml' tests"
+                sh "phpunit --log-junit logs/unitreport.xml -c git url:'https://github.com/marcuscai96/jenkins-phpunit-test/blob/main/tests/phpunit.xml' tests"
             		      }
 			      }
 	}
