@@ -1,9 +1,5 @@
 pipeline {
-	agent {
-		docker {
-			image 'composer:any'
-		}
-	}
+	agent any
 	stages {
 		stage('Build') {
 			steps {
