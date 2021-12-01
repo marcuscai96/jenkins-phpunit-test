@@ -8,7 +8,7 @@ pipeline {
 		}
 		stage('Test') {
 			steps {
-                sh './vendor/bin/phpunit tests'
+                git url: 'https://github.com/marcuscai96/jenkins-phpunit-test/tree/main/tests'
             }
 		}
 	}
