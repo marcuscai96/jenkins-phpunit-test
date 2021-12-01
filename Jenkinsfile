@@ -8,7 +8,7 @@ pipeline {
 		}
 		stage('Test') {
 			steps {
-                git url: 'https://github.com/marcuscai96/jenkins-phpunit-test/blob/main/tests/GumballMachineTest.php'
+                phpunit --log-junit results/phpunit/phpunit.xml -c test/phpunit.xml
             }
 		}
 	}
