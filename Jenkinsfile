@@ -1,16 +1,19 @@
 pipeline {
-	agent any
-	stages{
+	agent any {
+		docker {
+			image 'composer:latest'
+		}
+	}
+	stages {
 		stage('Build') {
 			steps {
-				echo "123"
+				sh 'composer install'
 			}
 		}
 		stage('Test') {
 			steps {
-                sh "usr/bin/phpunit --log-junit logs/unitreport.xml -c git url:'https://github.com/marcuscai96/jenkins-phpunit-test/blob/main/tests/phpunit.xml' tests"
-            		      }
-			      }
+                sh '/usr/bin/phpunit tests'
+            }
+		}
 	}
-
 }
