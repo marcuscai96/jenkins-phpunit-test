@@ -12,4 +12,9 @@ pipeline {
             }
 		}
 	}
+	post {
+		always {
+			juniy testResults; 'logs/unitreport.xml'
+		}
+	}
 }
