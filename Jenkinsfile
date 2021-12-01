@@ -8,7 +8,7 @@ pipeline {
 		}
 		stage('Test') {
 			steps {
-                sh '/usr/bin/phpunit tests'
+                sh '/usr/bin/phpunit test'
             }
 		}
 	}
